@@ -1,6 +1,8 @@
 <!DOCTYPE html>
   <html>
   <head>
+	     <title>Lebateleur</title>
+	   <meta charset="utf-8" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -8,8 +10,14 @@
   $(document).ready(function()
   {
 	var phrases = [
-		"hello",
-		"bonjour"];
+		"La réformulation epistémologique nous permet de mieux cerner le point de différence et donc de le traiter.",
+		"Dire que la loi des grands nombre s'applique à l’infini, et en conclure que par la même elle ne s'applique 'jamais' ou 'rarement' est une erreur fondamentale pour la raison suivante : \n L'Infini n'est pas une grandeur mais une direction.",
+		"Ce qu'il est utile de noter est qu'il existe quasi-systématiquement correspondance dans le symbole entre objets réels et objets émotionnels - Soleil/Père - Terre/Mère mais aussi avec des objets géométriques purs - point, cercle, triangle, carré ...",
+		"Transposer l'état probable d'un objet dans l'espace à l'état probable d'un événement dans le temps ferait des séries statistiques des 'forces' ... curieux non ?",
+		"Question : Quelle est l'intensité d'un champ magnétique qui prend la forme de la courbe d'une loi normale ? Est-ce l'énergie du hasard ?",
+		"Toutes constructions de structures et leur comportement du physique, au biologique au langage et aux organisations sociales obéiraient aux même principe inéluctable de la thermodynamique ....",
+		" Je maintiendrais l'hypothèse suivante (avec l'aide de mon avatar) que le symbolique préexiste aux langages et qu'il est en même la source, et que le symbolique prend lui-même sa source dans les Archétypes qui auraient un caractère tout aussi universel dans la psyché humaine que les composants chimiques de l'ADN pour le biologique ....",
+		"Ce qui, en soit, pourrait interroger le 2° principe de la thermodynamique selon F. Roddier, dans la mesure où 'les objets imaginaires' sont probablement crée selon ce même principe et ne sont probablement pas des 'fantaisies' ...."];
     var root_pieces = 2;
     var tof1 = "https://scontent-bru2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10659404_376213575868426_6466598678924219327_n.jpg?oh=c726554ffc0b350f7ba8075fc6266119&oe=56522F5A"
     $("#box").attr("src", tof1);
@@ -51,51 +59,25 @@
     });
     $("#btn1").click(function(){
 		effect();
-      $("#text").val(phrases[Math.floor(Math.random()*2)+0]);
-    });
-    $("#btn2").click(function(){
-      $("#box").animate({width:"500px"});
-      $("#box").animate({height:"auto"});
-    });
-    $("#btn3").click(function(){
-      var pieces=root_pieces*root_pieces;
-      root_pieces++;
-      $("#box").toggle('explode', {pieces:pieces}, 1000);
-      $("#box").show('explode', {pieces:pieces}, 1000);
-    });
-    $("#btn_transform").click(function(){
-      $("#box").toggle('explode', {pieces:16}, 1000);
-      if ($("#box").attr("src")==tof1) {
-        $("#box").attr("src", tof2);
-      }
-      else {
-        $("#box").attr("src", tof1);
-      }
-      $("#box").show('explode', {pieces:16}, 1000);
-    });
-    $("#btn_shake").click(function(){
-      $("#box").effect('shake');
+      $("#text").val(phrases[Math.floor(Math.random()*phrases.length)+0]);
     });
   });
 </script>
   </head>
   <body>
   
-  <button id="btn1">Animate</button>
-  <button id="btn3">Explode</button>
-  <button id="btn_transform">Transform</button>
-  <button id="btn_shake">Shake</button>
-  <button id="btn2">Reset</button>
+  <button id="btn1">Lebateleur</button>
+
   
   <br>
   
-  <p><img id="box" src="" width="500px" align="right"/></p>
- 
-<div align="left" style="display:block;margin-left:0;margin-right:auto;font-size:14px;width:700px">
-	<textarea id="text" rows="4" cols="50" style="font-size:20px">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+
+ 	<div align="right" style="display:block;margin-left:auto;margin-right:150;font-size:14px;width:450px">
+		  <p><img id="box" src="" width="450px" align="right"/></p>
+	</div>
+	<textarea id="text" rows="10" cols="45" style="font-size:25px">
 	</textarea>
-</div>
+
   
   </body>
   </html>
