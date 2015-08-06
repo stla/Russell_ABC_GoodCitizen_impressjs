@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script>
+  $(document).ready(function()
+  {
+	var phrases = [
+		"hello",
+		"bonjour"];
+    var root_pieces = 2;
+    var tof1 = "https://scontent-bru2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10659404_376213575868426_6466598678924219327_n.jpg?oh=c726554ffc0b350f7ba8075fc6266119&oe=56522F5A"
+    $("#box").attr("src", tof1);
+    var tof2 = "http://themodernape.com/wp-content/uploads/2014/09/internet-troll.jpg";
+    function effect()
+	{	
+		var i = Math.floor(Math.random()*4)+0;
+		if(i==0){
+			$("#box").effect('shake');
+		}
+		if(i==1){
+			$("#box").animate({width:"200px"}); 
+			$("#box").animate({height:"auto"});
+			$("#box").animate({width:"300px"});
+			$("#box").animate({width:"200px"});
+			$("#box").animate({width:"500px"});
+			$("#box").animate({height:"auto"});
+		}
+		if(i==2){
+			var pieces=root_pieces*root_pieces;
+			root_pieces++;
+			$("#box").toggle('explode', {pieces:pieces}, 1000);
+			$("#box").show('explode', {pieces:pieces}, 1000);
+		}
+		if(i==3){
+			$("#box").toggle('explode', {pieces:16}, 1000);
+			if ($("#box").attr("src")==tof1) {
+				$("#box").attr("src", tof2);
+			}
+			else {
+				$("#box").attr("src", tof1);
+			}
+			$("#box").show('explode', {pieces:16}, 1000);
+		}
+		//return i;
+	};
+    $( "#box" ).mouseover(function() {
+      $( this ).effect('shake');
+    });
+    $("#btn1").click(function(){
+		effect();
+      $("#text").val(phrases[Math.floor(Math.random()*2)+0]);
+    });
+    $("#btn2").click(function(){
+      $("#box").animate({width:"500px"});
+      $("#box").animate({height:"auto"});
+    });
+    $("#btn3").click(function(){
+      var pieces=root_pieces*root_pieces;
+      root_pieces++;
+      $("#box").toggle('explode', {pieces:pieces}, 1000);
+      $("#box").show('explode', {pieces:pieces}, 1000);
+    });
+    $("#btn_transform").click(function(){
+      $("#box").toggle('explode', {pieces:16}, 1000);
+      if ($("#box").attr("src")==tof1) {
+        $("#box").attr("src", tof2);
+      }
+      else {
+        $("#box").attr("src", tof1);
+      }
+      $("#box").show('explode', {pieces:16}, 1000);
+    });
+    $("#btn_shake").click(function(){
+      $("#box").effect('shake');
+    });
+  });
+</script>
+  </head>
+  <body>
+  
+  <button id="btn1">Animate</button>
+  <button id="btn3">Explode</button>
+  <button id="btn_transform">Transform</button>
+  <button id="btn_shake">Shake</button>
+  <button id="btn2">Reset</button>
+  
+  <br>
+  
+  <p><img id="box" src="" width="500px" align="right"/></p>
+ 
+<div align="left" style="display:block;margin-left:0;margin-right:auto;font-size:14px;width:700px">
+	<textarea id="text" rows="4" cols="50" style="font-size:20px">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+	</textarea>
+</div>
+  
+  </body>
+  </html>
